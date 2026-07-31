@@ -53,9 +53,6 @@ class StoryOrchestrator:
                 print(f"[ПОВТОРНАЯ ОШИБКА]. Сырой ответ:\n{design.get('raw', '')[:500]}")
                 return {"score": 1, "iterations": 0, "verdict": "Ошибка архитектора"}
 
-        # ============================================================
-        # ИНИЦИАЛИЗАЦИЯ ОНТОЛОГИИ (ИСПРАВЛЕННЫЙ БЛОК)
-        # ============================================================
         self.ontology.metadata["genre"] = genre
         self.ontology.metadata["theme"] = theme
 
@@ -100,7 +97,6 @@ class StoryOrchestrator:
                     spatial["relation"],
                     spatial["object"]
                 )
-        # ============================================================
 
         # Шаг 2: Генерация сцен (строго 3 сцены)
         scenes = design.get("arc", [])[:3]
